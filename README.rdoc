@@ -4,7 +4,7 @@ FirstWeekApp
 ## Commit messages
 Model commit message:
 
-```
+````
 Capitalized, short (50 chars or less) summary
 
 More detailed explanatory text, if necessary.  Wrap it to about 72
