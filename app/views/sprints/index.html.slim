@@ -1,2 +1,10 @@
-- @sprints.each do |s|
-  = s.name
+#sprints
+  .row
+    .span10
+    - @sprints.each do |s|
+      .sprintname
+        = s.name
+      .sprintstart_date
+        = s.start_date
+      .sprintend_date
+        = s.end_date
