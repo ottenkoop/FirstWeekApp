@@ -1,6 +1,7 @@
 FirstWeekApp::Application.routes.draw do
 
   resources :userstories
+  resources :sprints
 
   root 'sprints#index'
   # The priority is based upon order of creation: first created -> highest priority.
