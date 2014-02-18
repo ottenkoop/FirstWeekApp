@@ -5,9 +5,9 @@
       .sprintname
         h1 #{s.name}: #{s.goal}
 
-      - for userstories in s.userstories
-        .userstories
-          .userstoriestitle
-            h2 Userstories
+      .userstories
+        .userstoriestitle
+          h2 Userstories
+        - for userstories in s.userstories
           .userstoriescontent
             = userstories.content
