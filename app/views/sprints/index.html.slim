@@ -2,12 +2,13 @@
   .row-fluid
     .span12
     - @sprints.each do |s|
-      .sprintname
-        h1 #{s.name}: #{s.goal}
+      .sprint
+        .sprintname
+          h1 #{s.name}: #{s.goal}
 
-      .userstories
-        .userstoriestitle
-          h2 Userstories
-        - for userstories in s.userstories
-          .userstoriescontent
-            = userstories.content
+        .userstories
+          .userstoriestitle
+            h2 Userstories
+          - for userstories in s.userstories
+            .userstoriescontent
+              = userstories.content
