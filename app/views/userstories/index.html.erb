@@ -1,0 +1,10 @@
+<% @userstories.each do |u| %>
+
+<%= u.content %>
+
+<%= link_to "verwijder", (u), :method => :delete %>
+<br/>
+
+<% end %>
+
+<%= link_to "nieuw", new_userstory_path %>
