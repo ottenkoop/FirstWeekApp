@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: userstories
+#
+#  id         :integer          not null, primary key
+#  content    :text
+#  rating     :integer
+#  sprint_id  :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
