@@ -1,0 +1,10 @@
+<%= form_for @userstory do |u| %>
+
+<p>
+	<%= u.label :content ,"Userstory" %> 
+	<%= u.text_area :content %> 
+</p>
+<p>
+	<%= u.submit "verzenden" %>
+
+<% end %>

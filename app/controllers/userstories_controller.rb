@@ -22,6 +22,20 @@ class UserstoriesController < ApplicationController
 		@userstory = Userstory.find(params[:id])
 	end
 
+	def edit
+		@userstory = Userstory.find(params[:id])
+	end
+
+	def update
+		@userstory = Userstory.find(params[:id])
+			if @userstory.update_attributes(userstory_params)
+				redirect_to userstories_path, :notice => "Uw Userstory is gewijzigd"
+			else
+				render "edit"
+			end
+	end
+
+
 	def destroy
 		@userstory = Userstory.find(params[:id])
 		@userstory.destroy
