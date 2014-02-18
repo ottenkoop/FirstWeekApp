@@ -15,6 +15,7 @@ class SprintsController < ApplicationController
       redirect_to root_path, notice: "New Sprint Added"
     else
       render 'new', alert: "Someting went wrong"
+    end
   end
 
   private
