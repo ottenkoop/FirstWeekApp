@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+%w( sprints userstories ).each do |file|
+  YAML.load_file("#{Rails.root}/db/seeds/#{file}.yml").each do |k, v|
+    Object.const_get(k.classify).create(v)
+  end
+end

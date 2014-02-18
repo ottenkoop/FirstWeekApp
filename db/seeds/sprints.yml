@@ -1,0 +1,18 @@
+sprints:
+- id: 1
+  name: "Sprint 0"
+  start_date: 2014-02-17
+  end_date: 2014-02-28
+  goal: "Create a small App"
+
+- id: 2
+  name: "Sprint 1"
+  start_date: 2014-03-03
+  end_date: 2014-03-14
+  goal: "First Prototype"
+
+- id: 3
+  name: "Sprint 2"
+  start_date: 2014-03-17
+  end_date: 2014-04-28
+  goal: "Second prototype"
