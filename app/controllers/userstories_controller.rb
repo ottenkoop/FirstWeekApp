@@ -1,21 +1,20 @@
 class UserstoriesController < ApplicationController
 
 	def index
-		@userstories = Userstories.all
+		@userstories = Userstory.all
 	end
 
 	def new
-		@userstory = Userstories.new
+		@userstory = Userstory.new
 	end
 
 	def create
-		@userstory = Userstories.new(userstories_params)
-		@userstory.save
+		@userstory = Userstory.new(userstory_params)
 	end
 
 	private
 
-	def userstories_params
+	def userstory_params
 		params.require(:userstories).permit(:content, :rating, :sprint_id)
 	end
 end
