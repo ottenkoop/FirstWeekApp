@@ -1,14 +1,13 @@
 #sprints
   .row-fluid
-    .span10
+    .span12
     - @sprints.each do |s|
       .sprintname
-        = s.name
-      .sprintstart_date
-        = s.start_date
-      .sprintend_date
-        = s.end_date
+        h1 #{s.name}: #{s.goal}
 
       - for userstories in s.userstories
         .userstories
-          = userstories.content
+          .userstoriestitle
+            h2 Userstories
+          .userstoriescontent
+            = userstories.content
