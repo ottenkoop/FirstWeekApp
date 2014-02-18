@@ -8,3 +8,7 @@
         = s.start_date
       .sprintend_date
         = s.end_date
+
+      - for userstories in @sprints.userstories
+        .userstories
+          = userstories.content

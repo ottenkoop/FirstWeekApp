@@ -12,4 +12,5 @@
 #
 
 class Sprint < ActiveRecord::Base
+  has_many :userstories
 end

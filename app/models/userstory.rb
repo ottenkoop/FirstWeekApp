@@ -11,4 +11,5 @@
 #
 
 class Userstory < ActiveRecord::Base
+  belongs_to :sprint
 end
