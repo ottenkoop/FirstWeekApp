@@ -5,14 +5,21 @@
         h1 New sprint
 
       .sprintForm
+        = link_to("« Back to sprints", sprints_path, class: "btn btn-default")
+
         = form_for(@sprint) do |f|
           fieldset
-            = f.label :name, "Sprint name:"
-            = f.text_field :name
-            = f.label :goal, "Sprint goal:"
-            = f.text_field :goal
-            = f.label :start_date, "Sprint start date:"
-            = f.date_select(:start_date, order: [:day,:month,:year])
-            = f.label :end_date, "Sprint end date:"
-            = f.date_select(:end_date, order: [:day,:month,:year])
-            = f.submit
+            p
+              = f.label :name, "Sprint name:"
+              = f.text_field :name
+            p
+              = f.label :goal, "Sprint goal:"
+              = f.text_field :goal
+            p
+              = f.label :start_date, "Sprint start date:"
+              = f.date_select(:start_date, order: [:day,:month,:year])
+            p
+              = f.label :end_date, "Sprint end date:"
+              = f.date_select(:end_date, order: [:day,:month,:year])
+            p
+              = f.submit("Create Sprint", class: "btn btn-primary")
