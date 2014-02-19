@@ -1,0 +1,8 @@
+.header
+  .container
+    .logo
+      h1 = link_to(root_path) do
+        |Your<span>UserStories</span><span class="dot">.</span>
+
+    .newSprint
+      = link_to("Add New Sprint", new_sprint_path, class: "btn btn-newSprint")
