@@ -15,7 +15,8 @@ class SprintToggle
     userstory = index.closest('.sprintsoverview').find('.userstories')
 
     ($ @userstories).not(userstory).removeClass 'current'
-    ($ userstory).toggleClass('current', '')
+
+    ($ userstory).toggleClass('current', ' ')
 
 $ ->
   sprint_toggle = new SprintToggle(($ '#sprints .sprint'))

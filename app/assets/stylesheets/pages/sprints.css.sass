@@ -37,14 +37,22 @@
       @include position(absolute, 0 150px 20px 0)
 
   .userstories
-    padding: 2% 25% 2% 25%
-    display: none
+    @include transition(opacity 600ms ease-in)
+
+    visibility: hidden
+    opacity: 0
+    height: 0
+
+    &.current
+      visibility: visible
+      opacity: 1
+      display: block
+      padding: 2% 25% 2% 25%
+      height: auto
 
     h2
       font-size: 18px
 
-    &.current
-      display: block
 
     .userstoriescontent
       @include border-left-radius(5px)
