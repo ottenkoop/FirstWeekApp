@@ -35,6 +35,15 @@ class UserstoriesController < ApplicationController
 			end
 	end
 
+	def update_ranking
+    if params.key?(:userstory)
+      Userstory.update(params[:userstory].keys, params[:userstory].values)
+      redirect_to '/'
+    else
+      redirect_to '/recent/edit',
+      notice: 'No Files were selected to upload!'
+    end
+	end
 
 	def destroy
 		@userstory = Userstory.find(params[:id])
@@ -45,6 +54,6 @@ class UserstoriesController < ApplicationController
 	private
 
 	def userstory_params
-		params.require(:userstory).permit(:content, :ranking)
+		params.permit(:content, :ranking)
 	end
 end

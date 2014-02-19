@@ -13,6 +13,13 @@
         .userstories
           .userstoriestitle
             h2 Userstories:
-          - for userstories in s.userstories
-            .userstoriescontent
-              = userstories.content
+            = form_tag update_ranking_path, multipart: true
+              - for userstories in s.userstories
+                .userstoriescontent
+                  = userstories.content
+
+                  = fields_for "userstory[]", userstories do |userstory|
+                    .selectpointsfield
+                      = userstory.number_field :rating, in: 0..(s.total_us_count * s.multiplier), step: 5.0
+
+              = submit_tag

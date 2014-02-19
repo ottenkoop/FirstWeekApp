@@ -17,7 +17,7 @@ class Sprint < ActiveRecord::Base
   accepts_nested_attributes_for :userstories
 
   def multiplier
-    (userstories.count / 2) + 0.5
+    ((userstories.count / 2) + 0.5) * 10
   end
 
   def total_us_count

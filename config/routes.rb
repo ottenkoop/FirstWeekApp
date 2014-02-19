@@ -5,7 +5,8 @@ FirstWeekApp::Application.routes.draw do
 
   root 'sprints#index'
 
-  post '/userstories', to: 'sprints#update_ranking'
+  post '/', to: 'userstories#update_ranking', as: 'update_ranking'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
