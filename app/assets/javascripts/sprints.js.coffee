@@ -9,8 +9,6 @@ class SprintToggle
     @items.on 'click', (e) =>
       target = ($ e.target)
 
-      console.log target.index()
-
       @setCurrent target
 
   setCurrent: (index) ->
