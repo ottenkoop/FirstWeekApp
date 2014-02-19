@@ -14,3 +14,35 @@ userstories:
 - id: 4
   content: "Als teamlid wil ik userstories kunnen aanpassen"
   sprint_id: 1
+
+- id: 5
+  content: "Als teamlid wil ik ....."
+  sprint_id: 2
+
+- id: 6
+  content: "Als teamlid wil ik userstories kunnen koppelen"
+  sprint_id: 3
+  
+- id: 7
+  content: "Als teamlid wil ik userstories kunnen bekijken"
+  sprint_id: 1
+  
+- id: 8
+  content: "Als teamlid wil ik userstories kunnen bewerken"
+  sprint_id: 2
+  
+- id: 9
+  content: "Als teamlid wil ik userstories kunnen rankschikken"
+  sprint_id: 3
+  
+- id: 10
+  content: "Als teamlid wil ik userstories kunnen aanmaken en verwijderen"
+  sprint_id: 1
+  
+- id: 11
+  content: "Als teamlid wil ik userstories kunnen aanpassen....."
+  sprint_id: 2
+  
+- id: 12
+  content: "Als teamlid wil ik userstories kunnen aanpassen......."
+  sprint_id: 3
