@@ -13,3 +13,7 @@
 class Userstory < ActiveRecord::Base
   belongs_to :sprint
 end
+
+def us_ranking
+	Userstory.all
+end
