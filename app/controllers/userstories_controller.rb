@@ -42,10 +42,6 @@ class UserstoriesController < ApplicationController
 		redirect_to userstories_path
 	end
 
-	def update_ranking
-
-	end
-
 	private
 
 	def userstory_params

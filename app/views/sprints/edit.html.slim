@@ -1,0 +1,25 @@
+#sprints
+  .row-fluid
+    .span12
+      .sprintname
+        h1 <span class="glyphicon glyphicon-pencil"></span> Edit #{@sprint.name}: #{@sprint.goal}
+
+      .sprintForm
+        = link_to("« Back to sprints", sprints_path, class: "btn btn-default")
+
+        = form_for(@sprint) do |f|
+          fieldset
+            p
+              = f.label :name, "Sprint name:"
+              = f.text_field(:name, class: "form-control", placeholder: "Sprint name")
+            p
+              = f.label :goal, "Sprint goal:"
+              = f.text_field(:goal, class: "form-control", placeholder: "Sprint goal")
+            p
+              = f.label :start_date, "Sprint start date:"
+              = f.date_select(:start_date, order: [:day,:month,:year])
+            p
+              = f.label :end_date, "Sprint end date:"
+              = f.date_select(:end_date, order: [:day,:month,:year])
+            p
+              = f.submit("Edit Sprint", class: "btn btn-primary")
