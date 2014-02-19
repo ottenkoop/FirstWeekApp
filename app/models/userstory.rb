@@ -17,5 +17,5 @@ class Userstory < ActiveRecord::Base
   	Userstory.count
   end
 
-
+  default_scope { order('rating DESC') }
 end
