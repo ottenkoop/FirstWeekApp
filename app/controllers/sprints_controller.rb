@@ -22,6 +22,16 @@ class SprintsController < ApplicationController
     @sprint = Sprint.find(params[:id])
   end
 
+  def update
+    @sprint = Sprint.find(params[:id])
+
+    if @sprint.update(params[:sprint].permit(:name, :goal, :start_date, :end_date))
+      redirect_to root_path, notice: "Sprint edited"
+    else
+      render 'edit', alert: "Someting went wrong"
+    end
+  end
+
   def destroy
     sprint = Sprint.find(params[:id])
     sprint.destroy
