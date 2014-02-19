@@ -3,23 +3,33 @@
     - @sprints.each do |s|
       .span12.sprintsoverview
         .sprint
-          .sprintname
-            h1 #{s.name}: #{s.goal}
-          .sprinteditlink
-            = link_to 'Edit Sprint', edit_sprint_path(s.id)
-          .sprintdeletelink
-            = link_to 'Delete Sprint', sprint_path(s.id), method: :delete, data: { confirm: 'Are you FUCKING sure?' }
+          .container
+            .sprintname
+              h1 #{s.name}: #{s.goal}
+            .sprintdeletelink
+              = link_to 'Delete Sprint', sprint_path(s.id), method: :delete, data: { confirm: 'Are you FUCKING sure?' }
+            .sprinteditlink
+              = link_to 'Edit Sprint', edit_sprint_path(s.id)
 
         .userstories
-          .userstoriestitle
-            h2 Userstories:
-            = form_tag update_ranking_path, multipart: true
-              - for userstories in s.userstories
-                .userstoriescontent
-                  = userstories.content
+          .container
+            .userstoriestitle
+              h2 Userstories:
+              = form_tag update_ranking_path, multipart: true
+                - for userstories in s.userstories
+                  .userstoriescontent
+                    = userstories.content
 
-                  = fields_for "userstory[]", userstories do |userstory|
-                    .selectpointsfield
-                      = userstory.number_field :rating, in: 0..(s.total_us_count * s.multiplier), step: 5.0
+                    = fields_for "userstory[]", userstories do |userstory|
+                      .selectpointsfield
+                        = userstory.number_field :rating, in: 0..(s.total_us_count * s.multiplier), step: 5.0
 
-              = submit_tag
+                .userstoriesbar
+                  .newuserstory
+                    = link_to 'New Userstory', new_userstory_path
+                  .submitbtn
+                    = submit_tag "Update Userstories"
+                  .totalpoints
+                    p Aantal nog te verdelen:
+                    = s.total_us_count * s.multiplier
+
