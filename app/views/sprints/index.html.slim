@@ -1,11 +1,14 @@
 #sprints
   .row-fluid
-    .span12
     - @sprints.each do |s|
-      .sprint
-        .sprintname
-          h1 #{s.name}: #{s.goal}
-        .sprintnewlink
+      .span12.sprintsoverview
+        .sprint
+          .sprintname
+            h1 #{s.name}: #{s.goal}
+          .sprinteditlink
+            = link_to 'Edit Sprint', edit_sprint_path(s.id)
+          .sprintdeletelink
+            = link_to 'Delete Sprint', sprint_path(s.id), method: :delete, data: { confirm: 'Are you FUCKING sure?' }
 
         .userstories
           .userstoriestitle

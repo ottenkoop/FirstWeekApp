@@ -18,6 +18,17 @@ class SprintsController < ApplicationController
     end
   end
 
+  def edit
+    @sprint = Sprint.find(params[:id])
+  end
+
+  def destroy
+    sprint = Sprint.find(params[:id])
+    sprint.destroy
+
+    redirect_to '/', notice: 'Sprint has been deleted'
+  end
+
   private
 
   def sprintparams
