@@ -1,5 +1,19 @@
 class SprintToggle
-  contructor: (el) ->
-    @el = ($ el)
+  constructor: (el) ->
+    @items = ($ el)
+    @userstories = @items.closest('.sprintsoverview').find('.userstories')
 
-    console.log 'henk'
+    @bindListeners()
+
+  bindListeners: ->
+    @items.on 'click', (e) =>
+      target = ($ e.target)
+
+      @setCurrent target
+
+  setCurrent: (index) ->
+    userstory = index.closest('.sprintsoverview').find('.userstories')
+
+    ($ @userstories).not(userstory).removeClass 'current'
+
+    ($ userstory).toggleClass('current', ' ')

@@ -20,19 +20,13 @@
 	</table>
 </div>
 
-<%= collection_select(:sprint, :sprint_id, Userstory.all, :id, :ranking) %>
-
 	<%= link_to "edit", edit_userstory_path(u), :class => "btn-sm btn-primary" %>
 	<%= link_to "verwijder", (u), :method => :delete, :class => "btn-sm btn-danger" %>
+
 
 <br/><br/>
 
 <% end %>
-<<<<<<< HEAD
 <div>
-<%= link_to "nieuw", new_userstory_path, :class => "btn btn-info" %>
-=======
-<div> 
-<%= link_to "Maak een nieuwe userstory", new_userstory_path, :class => "btn btn-info" %>
->>>>>>> 49684694028c6aa3ed9fbe4932147c4326653692
+	<%= link_to "Maak een nieuwe userstory", new_userstory_path, :class => "btn btn-info" %>
 </div>

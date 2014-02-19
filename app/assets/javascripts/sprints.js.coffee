@@ -1,22 +1,7 @@
-class SprintToggle
-  constructor: (el) ->
-    @items = ($ el)
-    @userstories = @items.closest('.sprintsoverview').find('.userstories')
-
-    @bindListeners()
-
-  bindListeners: ->
-    @items.on 'click', (e) =>
-      target = ($ e.target)
-
-      @setCurrent target
-
-  setCurrent: (index) ->
-    userstory = index.closest('.sprintsoverview').find('.userstories')
-
-    ($ @userstories).not(userstory).removeClass 'current'
-
-    ($ userstory).toggleClass('current', ' ')
+#= include partials/sprint_toggle
+#= include partials/userstory_rating
 
 $ ->
   sprint_toggle = new SprintToggle(($ '#sprints .sprint'))
+
+  userstory_rating = new UserstoryRating(($ '#sprints userstories_edit'))

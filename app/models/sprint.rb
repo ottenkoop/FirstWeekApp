@@ -13,4 +13,18 @@
 
 class Sprint < ActiveRecord::Base
   has_many :userstories
+
+  accepts_nested_attributes_for :userstories
+
+  def multiplier
+    (userstories.count / 2) + 0.5
+  end
+
+  def total_us_count
+    userstories.count
+  end
+
+  def total_points
+    8 * 20
+  end
 end

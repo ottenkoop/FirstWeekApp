@@ -12,8 +12,10 @@
 
 class Userstory < ActiveRecord::Base
   belongs_to :sprint
-end
 
-def us_ranking
-	Userstory.all
+  def total_userstories
+  	Userstory.count
+  end
+
+
 end

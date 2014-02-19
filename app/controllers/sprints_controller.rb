@@ -39,6 +39,10 @@ class SprintsController < ApplicationController
     redirect_to '/', notice: 'Sprint has been deleted'
   end
 
+  def update_ranking
+
+  end
+
   private
 
   def sprintparams
