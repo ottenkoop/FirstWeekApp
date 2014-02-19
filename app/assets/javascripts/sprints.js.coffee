@@ -1,17 +1,24 @@
 class SprintToggle
   constructor: (el) ->
-    @el = ($ el)
-    @sprintname = @el.find('.sprint')
-
-    ($ '.userstories').hide()
+    @items = ($ el)
+    @userstories = @items.find('.userstories')
 
     @bindListeners()
 
   bindListeners: ->
-    @sprintname.on 'click', (e) =>
+    @items.on 'click', (e) =>
       target = ($ e.target)
 
-      target.next('.userstories').show()
+      console.log target.index()
+
+      @setCurrent target
+
+  setCurrent: (index) ->
+    userstory = index.find('.userstories')
+
+    console.log ($ @userstories).not(userstory).removeClass('current')
+
+    ($ userstory).toggleClass('current', '')
 
 $ ->
-  sprint_toggle = new SprintToggle(($ '#sprints'))
+  sprint_toggle = new SprintToggle(($ '#sprints .sprint'))

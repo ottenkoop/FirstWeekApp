@@ -6,13 +6,17 @@
     background-color: #2980B9
     padding: 6% 25% 2% 25%
     color: white
-
+    pointer-events: none
 
   .userstories
     padding: 2% 25% 2% 25%
+    display: none
 
     h2
       font-size: 18px
+
+    &.current
+      display: block
 
     .userstoriescontent
       background-color: #cccccc
@@ -23,7 +27,7 @@
     padding: 2% 25% 2% 25%
 
     fieldset
-      
+
       label
         display: block
         font-size: 18px
