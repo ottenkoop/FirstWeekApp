@@ -19,17 +19,22 @@
                 - for userstories in s.userstories
                   .userstoriescontent
                     = userstories.content
+                    .actionbtns
+                      = link_to edit_userstory_path(userstories.id), class: 'btn' do
+                        i.fa.fa-pencil
+
+                      = link_to userstory_path(userstories.id), method: :delete, data: { confirm: 'Are you FUCKING sure?'} do
+                        i.fa.fa-trash-o
 
                     = fields_for "userstory[]", userstories do |userstory|
                       .selectpointsfield
-                        = userstory.number_field :rating, in: 0..(s.total_us_count * s.multiplier), step: 5.0
+                        = userstory.number_field :rating, in: 0..(s.total_us_count * s.multiplier), step: 5.0, class: "userstorypoints"
 
                 .userstoriesbar
                   .newuserstory
                     = link_to 'New Userstory', new_userstory_path
                   .submitbtn
-                    = submit_tag "Update Userstories"
+                    = submit_tag "Update Userstories", class: "submit"
                   .totalpoints
-                    p Aantal nog te verdelen:
-                    = s.total_us_count * s.multiplier
-
+                    p.text Aantal nog te verdelen:
+                    p.points #{s.total_us_count * s.multiplier.to_i}

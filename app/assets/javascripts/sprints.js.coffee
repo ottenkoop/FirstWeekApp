@@ -1,7 +1,7 @@
 #= include partials/sprint_toggle
-#= include partials/userstory_rating
+#= include partials/userstory_points
 
 $ ->
   sprint_toggle = new SprintToggle(($ '#sprints .sprint'))
 
-  userstory_rating = new UserstoryRating(($ '#sprints userstories_edit'))
+  userstory_points = new UserstoryPoints(($ '#sprints .userstories'))

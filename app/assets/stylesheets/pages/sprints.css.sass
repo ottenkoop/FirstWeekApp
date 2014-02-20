@@ -78,3 +78,63 @@
         input
           width: 50px
           margin: 15% 0 0 15%
+
+      .actionbtns
+        @include transition(opacity 600ms ease-in)
+
+        visibility: hidden
+        opacity: 0
+        float: right
+        margin: -12px 10px 0 0
+
+      &:hover
+        .actionbtns
+          visibility: visible
+          opacity: 1
+
+        i
+          color: #393939
+
+    .userstoriesbar
+      position: relative
+      height: 50px
+
+      .newuserstory, .submitbtn
+        @include transition(background-color 0.4s ease)
+        @include border-left-radius(5px)
+        @include border-right-radius(5px)
+
+        float: left
+        background-color: #2980b9
+        padding: 10px 15px 10px 15px
+        margin-right: 20px
+
+        &:hover
+          background-color: #114668
+
+        a
+          color: white
+
+          &:hover
+            text-decoration: none
+
+        input
+          padding: 0px
+
+        .submit
+          background: none
+          border: none
+          color: white
+
+      .totalpoints
+        float: right
+
+        .text
+          float: left
+          margin: 0 20px 0 0
+
+        .points
+          float: left
+          color: #2980b9
+
+
