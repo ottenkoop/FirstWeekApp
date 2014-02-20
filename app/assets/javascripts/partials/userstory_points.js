@@ -12,9 +12,9 @@ class UserstoryPoints
       filled_points = 0
 
       if target.closest('.userstories').hasClass 'current'
-        newpointsDiv = target.closest('.sprintsoverview').find('.totalpoints .newpoints')
+        newpointsDiv = target.closest('.sprintsoverview').find('.totalpoints .points')
 
-        totalPointsDiv = target.closest('.sprintsoverview').find('.totalpoints .points')
+        totalPointsDiv = target.closest('.sprintsoverview').find('.totalpoints .totalpoints')
         totalPoints = Number(totalPointsDiv.text())
         userstoryPoints = target.closest('.sprintsoverview').find('.userstorypoints')
 
@@ -22,8 +22,6 @@ class UserstoryPoints
           filled_points += Number(($ this).val())
 
         pointsLeft = (totalPoints - filled_points)
-
-        console.log pointsLeft
 
         newpointsDiv.text(pointsLeft)
 
