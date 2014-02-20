@@ -34,7 +34,7 @@
 
                 .userstoriesbar
                   .newuserstory
-                    = link_to 'New Userstory', new_userstory_path
+                    = link_to 'New Userstory', new_userstory_path(sprint_id: s.id)
                   .submitbtn
                     = submit_tag "Update Userstories", class: "submit"
                   .totalpoints

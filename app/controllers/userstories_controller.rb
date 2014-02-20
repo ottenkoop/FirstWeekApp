@@ -5,14 +5,16 @@ class UserstoriesController < ApplicationController
 	end
 
 	def new
+		@sprint = Sprint.find(params[:sprint_id])
 		@userstory = Userstory.new
+		
 	end
 
 	def create
 		@userstory = Userstory.new(userstory_params)
 
 		if @userstory.save
-			redirect_to userstories_path :notice => "Uw Userstory is opgeslagen!"
+			redirect_to sprints_path :notice => "Uw Userstory is opgeslagen!"
 		else
 			render "new"
 		end
@@ -28,6 +30,7 @@ class UserstoriesController < ApplicationController
 
 	def update
 		@userstory = Userstory.find(params[:id])
+		
 			if @userstory.update_attributes(userstory_params)
 				redirect_to userstories_path, :notice => "Uw Userstory is gewijzigd"
 			else
@@ -54,6 +57,6 @@ class UserstoriesController < ApplicationController
 	private
 
 	def userstory_params
-		params.permit(:content, :ranking)
+		params.require(:userstory).permit(:content, :sprint_id, :ranking)
 	end
 end
