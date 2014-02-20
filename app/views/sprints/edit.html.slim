@@ -1,11 +1,11 @@
-#sprints
+#sprints_new
   .row-fluid
     .span12
       .sprintname
         h1 <span class="glyphicon glyphicon-pencil"></span> Edit #{@sprint.name}: #{@sprint.goal}
 
       .sprintForm
-        = link_to("« Back to sprints", sprints_path, class: "btn btn-default")
+        = link_to("« Back to sprints", sprints_path, class: "btn btn-primary")
 
         = form_for(@sprint) do |f|
           fieldset
