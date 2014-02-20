@@ -14,5 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.turbolinks
+//= require chosen-jquery
 
 //= require sprints
+//= require newSprints

@@ -27,3 +27,4 @@ end
 
 # Add own gems
 gem 'annotate'
+gem 'chosen-rails'
