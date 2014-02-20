@@ -37,7 +37,9 @@
                     = link_to 'New Userstory', new_userstory_path
                   .submitbtn
                     = submit_tag "Update Userstories", class: "submit"
+                  .copytoclipboard Copy To Clipboard
+
                   .totalpoints
                     .text Aantal nog te verdelen:
-                    .points
+                    .points 100 punten
                     .totalpoints.hidden #{s.total_us_count * s.multiplier.to_i}

@@ -18,6 +18,7 @@ gem 'jquery-rails'
 
 gem 'turbolinks'
 gem 'jquery-turbolinks'
+gem 'zeroclipboard-rails'
 
 gem 'jbuilder', '~> 1.2'
 
