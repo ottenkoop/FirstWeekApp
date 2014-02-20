@@ -6,6 +6,8 @@
           .container
             .sprintname
               h1 #{s.name}: #{s.goal}
+              .sprintdates
+                p #{s.start_date.strftime('%d-%m-%Y')} t/m #{s.end_date.strftime('%d-%m-%Y')}
             .sprintdeletelink
               = link_to 'Delete Sprint', sprint_path(s.id), method: :delete, data: { confirm: 'Are you FUCKING sure?' }
             .sprinteditlink
