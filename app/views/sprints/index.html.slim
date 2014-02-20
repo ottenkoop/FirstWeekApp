@@ -39,5 +39,5 @@
                     = submit_tag "Update Userstories", class: "submit"
                   .totalpoints
                     .text Aantal nog te verdelen:
-                    .points #{s.total_us_count * s.multiplier.to_i}
-
+                    .points.hidden #{s.total_us_count * s.multiplier.to_i}
+                    .newpoints
