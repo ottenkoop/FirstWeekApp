@@ -1,20 +1,26 @@
 <div class="page-header">
-  <h3>Nieuwe Userstories</h3>
+  <div class="container">
+    <div class="page-title">
+      <h1>Nieuwe Userstories</h1>
+    </div>
+  </div>
 </div>
 
+<div class="container">
+	<%= form_for @userstory do |u| %>
 
-<%= form_for @userstory do |u| %>
+	<div class="row">
+	    <div class="col-xs-4 form-group">
+	      	<%= u.label :content ,"Vul hieronder een userstory in:" %> 
+			<%= u.text_area :content, class: "form-control errorcheck", placeholder: "Als gebruiker wil ik graag..." %>
+	   	</div>
+	</div>
 
-<div class="row">
-    <div class="col-xs-4 form-group">
-      	<%= u.label :content ,"Vul hieronder een userstory in:" %> 
-		<%= u.text_area :content, class: "form-control errorcheck", placeholder: "Als gebruiker wil ik graag..." %>
-   	</div>
+	<p>
+		<%= u.submit "Toevoegen", :class => "btn btn-info" %>
+	</p>
+
+	<% end %>
+
 </div>
 
-<br><br>
-<p>
-	<%= u.submit "Toevoegen", :class => "btn btn-info" %>
-</p>
-
-<% end %>
