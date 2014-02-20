@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require jquery.turbolinks
 //= require chosen-jquery
+//= require Clipboard
 
 //= require sprints
 //= require newSprints

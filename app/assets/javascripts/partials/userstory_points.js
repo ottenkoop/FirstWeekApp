@@ -2,8 +2,10 @@ class UserstoryPoints
   constructor: (el) ->
     @userstories = ($ el)
     @userstoryPoints = @userstories.find('.selectpointsfield').find('input')
+    @copytoclipboard = @userstories.find('.copytoclipboard')
 
     @bindListeners()
+
 
   bindListeners: ->
     @userstoryPoints.on 'change', (e) ->
@@ -23,11 +25,18 @@ class UserstoryPoints
 
         pointsLeft = (totalPoints - filled_points)
 
-        newpointsDiv.text(pointsLeft)
+        newpointsDiv.text(pointsLeft + ' ' + 'punten')
 
+    @copytoclipboard.on 'click', (e) ->
+      target = ($ e.target)
+      output = $("<div />")
 
+      @userstories = target.closest('.userstories').find('.userstoriescontent')
 
-
-        #   totalpoints = points
-
-        #   console.log (100 - totalpoints)
+      target.zclip
+        path: 'http://davidwalsh.name/demo/ZeroClipboard.swf'
+        beforeCopy:
+          @userstories.each ->
+            output.append($(this).text()).append('\n')
+        copy: ->
+          output.text()
