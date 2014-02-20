@@ -7,7 +7,7 @@
             .sprintname
               h1 #{s.name}: #{s.goal}
               .sprintdates
-                p #{s.start_date.strftime("%d %b '%y")} t/m #{s.end_date.strftime("%d %b '%y")}
+                p From #{s.start_date.strftime("%d %b '%y")} until #{s.end_date.strftime("%d %b '%y")}
             .sprintdeletelink
               = link_to 'Delete Sprint', sprint_path(s.id), method: :delete, data: { confirm: 'Are you FUCKING sure?' }
             .sprinteditlink
