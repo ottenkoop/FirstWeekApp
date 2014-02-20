@@ -1,7 +1,6 @@
 class UserstoryPoints
   constructor: (el) ->
     @userstories = ($ el)
-
     @userstoryPoints = @userstories.find('.selectpointsfield').find('input')
 
     @bindListeners()
@@ -9,21 +8,26 @@ class UserstoryPoints
   bindListeners: ->
     @userstoryPoints.on 'change', (e) ->
       target = ($ e.target)
-      value = target.val()
+
+      filled_points = 0
 
       if target.closest('.userstories').hasClass 'current'
-        itemCount = ($ target.closest('.userstories').find('.storypoints'))
+        totalPointsDiv = target.closest('.sprintsoverview').find('.totalpoints .points')
+        totalPoints = Number(totalPointsDiv.text())
+        userstoryPoints = target.closest('.sprintsoverview').find('.userstorypoints')
 
-        id
+        userstoryPoints.each ->
+          filled_points += Number(($ this).val())
 
-        console.log allpoints
+        pointsLeft = (totalPoints - filled_points)
 
-      # if target.closest('.userstories').hasClass 'current'
-      #   console.log 'henk'
+        console.log pointsLeft
 
-      @totalPoints = target.closest('.userstories').find('.totalpoints')
-      @changePoints = (@totalPoints - value)
+        totalPointsDiv.text(pointsLeft)
 
-      # console.log @changePoints
 
-      # newPoints =
+
+
+        #   totalpoints = points
+
+        #   console.log (100 - totalpoints)
