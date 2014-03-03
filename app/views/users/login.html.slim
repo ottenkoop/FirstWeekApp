@@ -1,5 +1,5 @@
 #login
-  .row-fluid
+  .container
     .loginheader
       h1 EnergyApp Login
     = form_tag login_path do
@@ -11,7 +11,7 @@
           = label_tag :password
           = password_field_tag :password, nil, required: true
 
-      .row
+      .row-fluid
         = button_tag(type: "submit", class: "loginsubmit") do
           .action
             h2 LOG ME IN!
