@@ -20,6 +20,8 @@ gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'zeroclipboard-rails'
 
+gem 'rails_12factor', group: :production
+
 gem 'jbuilder', '~> 1.2'
 
 group :doc do

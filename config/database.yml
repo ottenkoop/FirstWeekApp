@@ -13,5 +13,5 @@ test:
 
 production:
   adapter: postgresql
-  database: FirstWeekApp_dev
+  database: FirstWeekApp
   host: localhost
