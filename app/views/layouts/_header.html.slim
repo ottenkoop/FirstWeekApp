@@ -4,5 +4,6 @@
       h1 = link_to(root_path) do
         |Your<span>UserStories</span><span class="dot">.</span>
 
-    .newSprint
+    .headerBtns
       = link_to("Add New Sprint", new_sprint_path, class: "btn btn-newSprint")
+      = link_to("Log Out", logout_path, class: 'cmsnavbtn btn btn-logOut')

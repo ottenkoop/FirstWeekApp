@@ -21,14 +21,28 @@
 				span.dot
 					color: #2980b9
 
-	.newSprint
+	.headerBtns
 		margin: 45px 0 0 0
 		float: right
 
 		a.btn-newSprint
+			@include transition(background-color 0.4s ease)
+
 			color: #fff
 			background: #34495e
 			border: 3px solid #fff
+
+			&:hover
+				color: #34495e
+				background: #fff
+
+		a.btn-logOut
+			@include transition(background-color 0.4s ease)
+
+			color: #fff
+			background: #34495e
+			border: 3px solid #fff
+			margin-left: 20px
 
 			&:hover
 				color: #34495e
