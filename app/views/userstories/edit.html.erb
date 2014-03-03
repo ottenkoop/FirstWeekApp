@@ -1,17 +1,1 @@
-<div class="page-header">
-  <h3>Aanpassen</h3>
-</div>
-
-<%= form_for @userstory do |u| %>
-
-<div class="bs-example">
-      	<%= u.label :content ,"Userstory" %> 
-		<%= u.text_area :content, class: "form-control errorcheck" %> 
-</div>
-
-<br><br>
-<p>
-	<%= u.submit "Toepassen", :class => "btn btn-info"%>
-</p>
-
-<% end %>
+<%= render "userstories/inputfields" %>

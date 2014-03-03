@@ -1,0 +1,29 @@
+<div class="page-header">
+  <div class="container">
+    <div class="page-title">
+      <h1>New Userstory for </h1>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <%= link_to("« Back to sprints", sprints_path, class: "btn btn-default") %>
+  <%= form_for @userstory do |u| %>
+
+  <div class="row">
+      <div class="col-xs-5 form-group">
+          <%= u.label :content ,"Userstory:" %>
+      <%= u.text_area :content, size: "30x3", class: "form-control errorcheck", placeholder: "Als gebruiker wil ik ... om ..." %>
+      <%= u.hidden_field :sprint_id, value: @sprint.id %>
+
+      </div>
+  </div>
+
+  <p>
+    <%= u.submit "Create Userstory", :class => "btn btn-primary" %>
+  </p>
+
+  <% end %>
+
+</div>
+

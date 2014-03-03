@@ -7,7 +7,7 @@ class UserstoriesController < ApplicationController
 	def new
 		@sprint = Sprint.find(params[:sprint_id])
 		@userstory = Userstory.new
-		
+
 	end
 
 	def create
@@ -25,14 +25,15 @@ class UserstoriesController < ApplicationController
 	end
 
 	def edit
+		@sprint = Sprint.find(params[:sprint_id])
 		@userstory = Userstory.find(params[:id])
 	end
 
 	def update
 		@userstory = Userstory.find(params[:id])
-		
+
 			if @userstory.update_attributes(userstory_params)
-				redirect_to userstories_path, :notice => "Uw Userstory is gewijzigd"
+				redirect_to '/', :notice => "Uw Userstory is gewijzigd"
 			else
 				render "edit"
 			end
@@ -51,7 +52,7 @@ class UserstoriesController < ApplicationController
 	def destroy
 		@userstory = Userstory.find(params[:id])
 		@userstory.destroy
-		redirect_to userstories_path
+		redirect_to '/'
 	end
 
 	private

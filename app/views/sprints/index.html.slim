@@ -22,7 +22,7 @@
                   .userstoriescontent
                     = userstories.content
                     .actionbtns
-                      = link_to edit_userstory_path(userstories.id), class: 'btn' do
+                      = link_to edit_userstory_path(userstories.id, sprint_id: s.id), class: 'btn' do
                         i.fa.fa-pencil
 
                       = link_to userstory_path(userstories.id), method: :delete, data: { confirm: 'Are you FUCKING sure?'} do
