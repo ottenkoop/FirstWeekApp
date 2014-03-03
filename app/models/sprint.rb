@@ -19,11 +19,15 @@ class Sprint < ActiveRecord::Base
   default_scope order('start_date ASC')
 
   def multiplier
-    ((userstories.count / 2) + 0.5) * 10
+    (total_us_count_10 / 2 ) + 5
   end
 
   def total_us_count
     userstories.count
+  end
+
+  def total_us_count_10
+    userstories.count * 10
   end
 
   def total_points
