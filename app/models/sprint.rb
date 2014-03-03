@@ -16,6 +16,8 @@ class Sprint < ActiveRecord::Base
 
   accepts_nested_attributes_for :userstories
 
+  default_scope order('start_date ASC')
+
   def multiplier
     ((userstories.count / 2) + 0.5) * 10
   end
