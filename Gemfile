@@ -19,6 +19,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'zeroclipboard-rails'
+gem 'bcrypt-ruby'
 
 gem 'rails_12factor', group: :production
 

@@ -1,0 +1,17 @@
+#login
+  .row-fluid
+    .loginheader
+      h1 EnergyApp Login
+    = form_tag login_path do
+      .loginform
+        .emailfield
+          = label_tag :username, "Username"
+          = text_field_tag :username, nil, required: true
+        .passwordfield
+          = label_tag :password
+          = password_field_tag :password, nil, required: true
+
+      .row
+        = button_tag(type: "submit", class: "loginsubmit") do
+          .action
+            h2 LOG ME IN!

@@ -23,5 +23,8 @@
                 p
                   = f.label :end_date, "Sprint end date:"
                   = f.date_select(:end_date, order: [:day,:month,:year], with_css_classes: true )
+
+                  = f.hidden_field :user_id, value: session[:user_id]
+
                 p
                   = f.submit("Create Sprint", class: "btn btn-primary")

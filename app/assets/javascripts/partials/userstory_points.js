@@ -6,7 +6,6 @@ class UserstoryPoints
 
     @bindListeners()
 
-
   bindListeners: ->
     @userstoryPoints.on 'change', (e) ->
       target = ($ e.target)

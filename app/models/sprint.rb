@@ -9,10 +9,12 @@
 #  goal       :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  user_id    :integer
 #
 
 class Sprint < ActiveRecord::Base
   has_many :userstories
+  belongs_to :user
 
   accepts_nested_attributes_for :userstories
 
@@ -28,9 +30,5 @@ class Sprint < ActiveRecord::Base
 
   def total_us_count_10
     userstories.count * 10
-  end
-
-  def total_points
-    8 * 20
   end
 end

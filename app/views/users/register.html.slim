@@ -1,0 +1,19 @@
+#register
+  .container
+    .userinfo
+      h1 Registreren
+      = form_for @user do |u|
+        .name
+          = u.label :username, "Username:"
+          = u.text_field :username, required: true, autocomplete: :off
+        .password
+          = u.label :password, 'Password:'
+          = u.password_field :password, required: true
+        .password_confirmation
+          = u.label :password_confirmation, 'Password confirmation:'
+          = u.password_field :password_confirmation, required: true
+
+        .row-fluid
+          = u.button(type: 'submit', class: 'submitbtn') do
+            .action
+              h2 Voeg toe!

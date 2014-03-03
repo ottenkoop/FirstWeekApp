@@ -1,7 +1,11 @@
 class SprintsController < ApplicationController
 
+  before_filter :authorize
+
   def index
-    @sprints = Sprint.all
+    @user = User.find(session[:user_id])
+
+    @sprints = @user.sprints
   end
 
   def new
@@ -42,6 +46,6 @@ class SprintsController < ApplicationController
   private
 
   def sprintparams
-    params.require(:sprint).permit(:name, :goal, :start_date, :end_date)
+    params.require(:sprint).permit(:name, :goal, :start_date, :end_date, :user_id)
   end
 end

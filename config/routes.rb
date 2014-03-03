@@ -2,10 +2,19 @@ FirstWeekApp::Application.routes.draw do
 
   resources :userstories
   resources :sprints
+  resources :users
 
   root 'sprints#index'
 
   post '/', to: 'userstories#update_ranking', as: 'update_ranking'
+
+  get 'login', to: 'users#login'
+    post 'login', to: 'users#login_user'
+
+  get 'register', to: 'users#register'
+    post 'register', to: 'users#create'
+
+  get 'logout', to: 'users#logout_user'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
