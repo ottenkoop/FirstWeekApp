@@ -12,7 +12,7 @@ class SprintsController < ApplicationController
     @sprint = Sprint.new(sprintparams)
 
     if @sprint.save
-      redirect_to root_path, notice: "New Sprint Added"
+      redirect_to root_url, notice: "New Sprint Added"
     else
       render 'new', alert: "Someting went wrong"
     end
