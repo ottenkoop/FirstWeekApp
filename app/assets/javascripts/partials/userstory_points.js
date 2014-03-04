@@ -36,6 +36,6 @@ class UserstoryPoints
         path: 'http://davidwalsh.name/demo/ZeroClipboard.swf'
         beforeCopy:
           @userstories.each ->
-            output.append($(this).text()).append('\n')
+            output.append($(this).text()).append(' (' + $(this).find('.userstorypoints').val() + ')' + '\n')
         copy: ->
           output.text()
