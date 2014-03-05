@@ -1,17 +1,24 @@
 #login
-  .container
-    .loginheader
-      h1 EnergyApp Login
-    = form_tag login_path do
-      .loginform
-        .emailfield
-          = label_tag :username, "Username"
-          = text_field_tag :username, nil, required: true
-        .passwordfield
-          = label_tag :password
-          = password_field_tag :password, nil, required: true
+  .loginheader
+    .header
+      .container
+        .logo
+          h1 = link_to(root_path) do
+            |Your<span>UserStories</span><span class="dot">.</span>
 
-      .row-fluid
+
+  .formfield
+    .container.loginbox
+      = form_tag login_path do
+        .loginform
+          .emailfield
+            = label_tag :username, "Username"
+            = text_field_tag :username, nil, required: true, class: "form-control"
+          .passwordfield
+            = label_tag :password
+            = password_field_tag :password, nil, required: true, class: "form-control"
+
+      .row-fluid.submitbtn
         = button_tag(type: "submit", class: "loginsubmit") do
           .action
-            h2 LOG ME IN!
+            h2 Log in

@@ -1,0 +1,51 @@
+#login, #register
+  .formfield
+    position: relative
+
+    .loginbox, .registerbox
+      @include position(absolute, 100px 50% 0 0)
+
+      width: 275px
+      border: 1px solid black
+      border-radius: 5px
+      // background: black
+      margin-right: -143px
+      // text-align: center
+      padding: 20px
+
+      label
+        margin-bottom: 5px
+
+      input
+        margin-bottom: 5px
+
+      form
+        margin-top: 0px
+
+
+    .submitbtn
+      margin: 0px
+
+      .loginsubmit
+        @include border-left-radius(5px)
+        @include border-right-radius(5px)
+        @include transition(background-color 0.4s ease)
+
+        background-color: #1b689a
+        padding: 10px 1px 1px 1px
+        border: 0
+        width: 100%
+        margin: 20px 0 0 0px
+        color: white
+
+        h2
+          font-size: 16px
+
+        &:hover
+          background-color: #114668
+
+        a
+          color: white
+
+          &:hover
+            text-decoration: none

@@ -1,19 +1,25 @@
 #register
-  .container
-    .userinfo
-      h1 Registreren
+  .loginheader
+    .header
+      .container
+        .logo
+          h1 = link_to(root_path) do
+            |Your<span>UserStories</span><span class="dot">.</span>
+
+  .formfield
+    .container.registerbox
       = form_for @user do |u|
         .name
-          = u.label :username, "Username:"
-          = u.text_field :username, required: true, autocomplete: :off
+          = u.label :username, "Username"
+          = u.text_field :username, required: true, autocomplete: :off,  class: "form-control"
         .password
-          = u.label :password, 'Password:'
-          = u.password_field :password, required: true
+          = u.label :password, 'Password'
+          = u.password_field :password, required: true,  class: "form-control"
         .password_confirmation
-          = u.label :password_confirmation, 'Password confirmation:'
-          = u.password_field :password_confirmation, required: true
+          = u.label :password_confirmation, 'Password confirmation'
+          = u.password_field :password_confirmation, required: true,class: "form-control"
 
-        .row-fluid
-          = u.button(type: 'submit', class: 'submitbtn') do
+        .row-fluid.submitbtn
+          = u.button(type: 'submit', class: 'loginsubmit') do
             .action
-              h2 Voeg toe!
+              h2 Register

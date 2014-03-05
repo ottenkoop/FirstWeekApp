@@ -13,7 +13,7 @@ html
 
   body
     .wrapper
-      = render 'layouts/header'
+      = render 'layouts/header' unless @login_page
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => name
       = yield
