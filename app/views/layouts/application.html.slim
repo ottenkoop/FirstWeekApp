@@ -12,8 +12,7 @@ html
     meta name="format-detection" content="telephone=no"
 
   body
-    .wrapper
-      = render 'layouts/header'
-      - flash.each do |name, msg|
-        = content_tag :div, msg, :id => name
-      = yield
+    = render 'layouts/header' unless @login_page
+    - flash.each do |name, msg|
+      = content_tag :div, msg, :id => name
+    = yield
