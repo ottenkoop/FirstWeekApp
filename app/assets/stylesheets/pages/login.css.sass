@@ -1,0 +1,57 @@
+#login, #register
+  @include retina-image(irish-hands, cover, $asset-pipeline: true)
+
+  height: 100%
+  background-size: cover
+  background-repeat: no-repeat
+
+  .formfield
+    position: relative
+
+    .loginbox, .registerbox
+      @include position(absolute, 100px 50% 0 0)
+
+      width: 320px
+      border-radius: 5px
+      background-color: rgba(52, 74, 91, 0.75)
+      margin-right: -160px
+      // text-align: center
+      padding: 30px 30px 30px 30px
+
+      label
+        margin-bottom: 5px
+        color: white
+
+      input
+        margin-bottom: 5px
+
+      form
+        margin-top: 0px
+
+
+    .submitbtn
+      margin-top: 20px
+
+      .loginsubmit
+        @include border-left-radius(5px)
+        @include border-right-radius(5px)
+        @include transition(background-color 0.4s ease)
+
+        background-color: #2980b9
+        padding: 10px 1px 1px 1px
+        border: 0
+        width: 100%
+        margin: 20px 0 0 0px
+        color: white
+
+        h2
+          font-size: 16px
+
+        &:hover
+          background-color: #114668
+
+        a
+          color: white
+
+          &:hover
+            text-decoration: none

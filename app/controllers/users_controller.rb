@@ -15,11 +15,13 @@ class UsersController < ApplicationController
   end
 
   def register
+    @login_page = true
     session[:user_id] = nil
     @user = User.new
   end
 
   def login
+    @login_page = true
   end
 
   def login_user
